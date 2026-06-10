@@ -94,10 +94,10 @@ export const ExpenseProvider = ({ children }) => {
   const [transactions, setTransactions] = useState(() => {
     try {
       const saved = localStorage.getItem('expense_tracker_transactions');
-      return saved ? JSON.parse(saved) : MOCK_TRANSACTIONS;
+      return saved ? JSON.parse(saved) : [];
     } catch (e) {
       console.error('Failed to parse transactions from local storage', e);
-      return MOCK_TRANSACTIONS;
+      return [];
     }
   });
 
